@@ -1,0 +1,12 @@
+# Ignore Git directory
+.git
+# Ignore Docker artifacts
+Dockerfile
+.dockerignore
+# Ignore build artifacts
+target/
+# Ignore environment variables file(s) if managed outside the container
+.env*
+# Ignore IDE files
+.idea/
+.vscode/
