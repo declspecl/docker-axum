@@ -14,7 +14,7 @@ async fn main() {
     let app = Router::new()
         // `GET /` goes to `root`
         .route("/", get(root))
-        .route("/healthcheck", get(healthcheck))
+        .route("/health", get(healthcheck))
         // `POST /users` goes to `create_user`
         .route("/users", post(create_user));
 
