@@ -14,6 +14,7 @@ async fn main() {
     let app = Router::new()
         // `GET /` goes to `root`
         .route("/", get(root))
+        .route("/healthcheck", get(healthcheck))
         // `POST /users` goes to `create_user`
         .route("/users", post(create_user));
 
@@ -25,6 +26,10 @@ async fn main() {
 // basic handler that responds with a static string
 async fn root() -> &'static str {
     "Hello, World!"
+}
+
+async fn healthcheck() -> StatusCode {
+    return StatusCode::OK;
 }
 
 async fn create_user(
